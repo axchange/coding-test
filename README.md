@@ -1,76 +1,43 @@
 # coding-test
-Simple Coding Test  
-After test, Dev team will interview how you design and develop.  
-Please leave your plan, design, develop history to explain.  
+AX coding test  
+1번 문제와 2-1, 2-2 중 택일해 총 두 문제를 1시간 안에 해결해주세요.  
+테스트 이후 개발 과정에 대한 인터뷰가 있을 예정입니다.  
+github 사용이 가능하신 분은 https://github.com/axchange/coding-test repo에서 master를 base branch로 본인 이름으로 된 branch를 따서 commit, push를 해주시면 됩니다.
 
----
-# For Web/Server Developer
-
-## 1. Website Crawler
+## 1. Web Crawler
 ### Goal
-- Crawl and save [HackerNews](https://news.ycombinator.com/) posts.
+- [HackerNews](https://news.ycombinator.com/) 에 있는 글 목록을 가져와 출력하는 프로그램을 작성하세요.
 
 ### Constraints
-- Result should be ordered.
-- Result should have title and post origin link.
+- 글 목록은 원 글과 동일한 순서여야 합니다.
+- 글 목록은 제목과 원글 링크가 있어야 합니다.
 
 ### Optional Features
-- Visit origin link and get post and save into files.
+- 원글 링크로 접속해 페이지 내용을 html 파일로 저장하세요. 파일명은 [글 제목].html 이어야 합니다.
 
-## 2. TODO List
+## 2-1. 열린 문 찾기
 ### Goal
-- User can view current todo list.
-- User can add new todo list.
-- User can edit/delete existing todo list.
+- 50개의 닫힌 문이 있습니다.
+- N명의 사람이 문 앞을 지나가며 다음 행동을 합니다.
+  - 자신의 순번의 배수에 해당하는 문을 열거나 닫습니다.
+  - 열린 문은 닫고 닫힌 문은 엽니다.
+- 사람의 수 N을 입력받아 위의 행동을 한 뒤 열린 문의 갯수를 출력하는 프로그램을 작성하세요.
+
+### Example
+- N=1에서 정답은 50입니다.
 
 ### Constraints
-- Todo list items are in reverse-time order.
-- Newly added todo list should be in right place.
+- 입력하는 숫자의 범위는 1 이상 50 이하입니다.
 
-### Optional Features
-- User can add comment to each todo list.
-
-## 3. Board with Comment
+## 2-2. 회문 찾기
 ### Goal
-- User can write post to board.
-- User can hide/show own post.
-- User can see shown post list.
-- User can add comment to any shown post.
+- 영어 소문자로 된 문자열이 있습니다.
+- 이 문자열 안에 회문(바로 읽어도 거꾸로 읽어도 동일한 문자열)이 숨어있는 경우 가장 긴 회문을 반환하고 없는 경우 Null을 반환하는 프로그램을 작성하세요.
+
+### Example
+- `abcxyzyxde` 가 입력된 경우 정답은 `xyzyx` 입니다. `yzy`도 회문이나 길이가 짧습니다.
+- `abaxyzyxde` 가 입력된 경우 정답은 `xyzyx` 입니다. `xyzyx` 밖에 `aba`가 있으나 길이가 짧습니다.
 
 ### Constraints
-- User can add comment on existing comment. (N-depth hierarchical)
-
-### Optional Features
-- User can see own post list in mypage.
-
----
-# For Android/iOS Developer
-## 1. Stopwatch
-### Goal
-- User can start/stop/reset stopwatch.
-- User can record lap time while stopwatch is running.
-- User can pause/resume stopwatch.
-
-### Constraints
-- Saved lap times are in reverse order.
-- Reset button is active only when stopwatch is in stop/pause state.
-
-### Optional Features
-- User can save whole lap times to csv file.
-- User can delete selected lap times.
-- User can add label to each lap time.
-
-## 2. TODO list
-### Goal
-- User can view current todo list.
-- User can add new todo list item.
-- User can edit existing todo list item.
-
-### Constraints
-- Todo list items are in reverse-time order.
-- Newly added todo list item should be in right place.
-
-### Optional Features
-- Save todo list using local db like [sqlite](https://www.sqlite.org/index.html) or [realm](https://realm.io/kr)
-- User can add comment to each todo list item.
-- User can check/delete todo list using left/right swipe action.
+- 입력되는 문자열의 길이는 5 이상 100 이하입니다.
+- 입력되는 문자열 안에 있는 회문이 여러개 있을 수 있으나 길이가 가장 긴 회문은 1개뿐입니다.
